@@ -1,0 +1,147 @@
+[
+    {
+      "name": "Arjun",
+      "preferences": [
+        "morning",
+        "evening",
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon",
+        "morning"
+      ]
+    },
+    {
+      "name": "Bharath",
+      "preferences": [
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon"
+      ]
+    },
+    {
+      "name": "Chaitanya",
+      "preferences": [
+        "evening",
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon",
+        "morning",
+        "evening"
+      ]
+    },
+    {
+      "name": "Dhruv",
+      "preferences": [
+        "morning",
+        "evening",
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon",
+        "morning"
+      ]
+    },
+    {
+      "name": "Eshwin",
+      "preferences": [
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon"
+      ]
+    },
+    {
+      "name": "Farhan",
+      "preferences": [
+        "evening",
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon",
+        "morning",
+        "evening"
+      ]
+    },
+    {
+      "name": "Geeta",
+      "preferences": [
+        "morning",
+        "evening",
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon",
+        "morning"
+      ]
+    },
+    {
+      "name": "Herman",
+      "preferences": [
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon"
+      ]
+    },
+    {
+      "name": "Isha",
+      "preferences": [
+        "evening",
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon",
+        "morning",
+        "evening"
+      ]
+    },
+    {
+      "name": "Jeevan",
+      "preferences": [
+        "morning",
+        "evening",
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon",
+        "morning"
+      ]
+    },
+    {
+      "name": "Kiara",
+      "preferences": [
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon"
+      ]
+    },
+    {
+      "name": "Latika",
+      "preferences": [
+        "evening",
+        "afternoon",
+        "morning",
+        "evening",
+        "afternoon",
+        "morning",
+        "evening"
+      ]
+    }
+  ]
+  
