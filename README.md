@@ -2,93 +2,172 @@
 # Assignment 4: Implementing Control Structures
 
 **Course:** MSCS-632 Advanced Programming Languages  
-**Application:** Employee Shift Scheduling System  
-**Language:** Go
+**Project:** Employee Shift Scheduling System  
+**Programming Languages:** Go and Python
 
-## Overview
+## Project Overview
 
-This project implements an employee scheduling system using Go. The application generates a weekly work schedule based on employee shift preferences while following the company's staffing requirements.
+This project implements an employee shift scheduling application in Go and Python. The application creates a weekly schedule based on employee shift preferences while meeting the company's staffing requirements.
 
-The implementation demonstrates Go control structures such as `if/else`, `for` loops, `break`, and `continue`, along with structs, maps, and slices.
+The main purpose of this assignment is to demonstrate how control structures such as conditionals, loops, and branching can be used to solve a practical scheduling problem in two different programming languages.
 
-## Scheduling Rules
+Both implementations follow the same scheduling rules but use language-specific data structures and programming features.
 
-- The company operates seven days a week.
+## Scheduling Requirements
+
+The application follows these rules:
+
+- The company operates seven days a week, Monday through Sunday.
 - Each day has three shifts: morning, afternoon, and evening.
 - Every shift requires at least two employees.
-- An employee can work only one shift per day.
-- An employee can work a maximum of five days per week.
-- Employee shift preferences are prioritized when possible.
-- Scheduling conflicts are resolved by assigning employees to other available shifts.
+- An employee cannot work more than one shift per day.
+- An employee cannot work more than five days per week.
+- Employee shift preferences are prioritized whenever possible.
+- Scheduling conflicts are resolved by assigning employees to alternative shifts.
+- The final schedule is validated before being displayed.
 
-The application requires at least nine employees to cover the 42 weekly shift assignments.
+There are 42 required employee assignments each week (7 days × 3 shifts × 2 employees). Since an employee can work a maximum of five days, at least nine employees are required.
 
 ## Project Structure
 
-```text
-go/
-├── main.go
-├── models.go
-├── input.go
-├── scheduler.go
-├── flow.go
-├── validation.go
-├── output.go
-├── employees.json
-└── go.mod
-```
+    MSCS-632-Assignment-4-Implementing-Control-Structures/
+    ├── go/
+    │   ├── main.go
+    │   ├── models.go
+    │   ├── input.go
+    │   ├── scheduler.go
+    │   ├── flow.go
+    │   ├── validation.go
+    │   ├── output.go
+    │   ├── employees.json
+    │   └── go.mod
+    ├── python/
+    │   ├── main.py
+    │   ├── scheduler.py
+    │   └── employees.json
+    ├── go screen shot.png
+    ├── go screenshot 2.png
+    ├── go screen shot 3.png
+    ├── python screenshot 1.png
+    ├── python screenshot 2.png
+    └── README.md
 
-## Implementation
+## Go Implementation
 
-The application is divided into several components:
+The Go application is divided into separate files for employee data, input processing, scheduling, validation, and output formatting.
 
-- **Input:** Reads employee information from `employees.json` or accepts interactive input.
-- **Scheduling:** Uses a min-cost flow algorithm to assign employees while considering their preferences.
-- **Conflict Resolution:** Reassigns employees when necessary to satisfy scheduling constraints.
-- **Validation:** Checks daily assignments, weekly limits, and minimum staffing.
-- **Output:** Prints the weekly schedule, employee work totals, and preference-matching statistics.
+It uses structs, maps, slices, loops, and conditional statements to manage employee assignments.
 
-## Running the Application
+The scheduling logic uses a min-cost flow algorithm to prioritize employee preferences while respecting scheduling constraints. Reverse edges allow the algorithm to adjust earlier assignments when conflicts occur.
 
-### Requirements
+### Running the Go Application
 
-- Go installed
+Go must be installed.
 
-### Run with Sample Data
-
-Navigate to the Go directory:
+From the repository root:
 
 ```bash
 cd go
 go run .
 ```
 
-### Run with Interactive Input
+To enter employee details manually:
 
 ```bash
 go run . --interactive
 ```
 
-Enter at least nine employees and their preferred shifts for all seven days.
+The application reads sample employee information from `employees.json` when running in the default mode.
 
-## Schedule Output
+## Python Implementation
 
-The application prints employee assignments for every day and shift, followed by weekly employee totals and preference statistics.
+The Python application implements the same scheduling requirements using Python dictionaries, lists, sets, loops, and conditional statements.
 
-### Go Implementation Screenshot
+The implementation is organized into two source files:
 
+- `scheduler.py`: Employee validation, shift assignments, conflict resolution, and schedule verification.
+- `main.py`: Employee input, application execution, and schedule output.
 
-## Validation
+Like the Go version, the Python scheduler uses assignment costs to prioritize preferred shifts while maintaining the company's staffing requirements.
 
-The generated schedule is checked to ensure:
+### Running the Python Application
 
-1. Every shift has at least two employees.
-2. No employee works more than one shift per day.
-3. No employee works more than five days per week.
-4. All seven days and three shifts are covered.
+Python 3 is required. No external libraries are needed.
 
-If the application cannot generate a valid schedule, it reports an error.
+From the repository root:
+
+```bash
+cd python
+python3 main.py
+```
+
+To enter employee information manually:
+
+```bash
+python3 main.py --interactive
+```
+
+The default mode reads employee information from `employees.json`.
+
+## Scheduling and Conflict Resolution
+
+Both implementations use the following approach:
+
+1. Read employee names and shift preferences.
+2. Validate the employee information.
+3. Create possible assignments for each employee, day, and shift.
+4. Assign lower costs to preferred shifts.
+5. Generate assignments while enforcing daily and weekly limits.
+6. Resolve conflicts by adjusting assignments when necessary.
+7. Validate the completed weekly schedule.
+8. Display the schedule and employee work totals.
+
+The scheduling algorithm assigns two employees to each shift. If the constraints cannot be satisfied, the program reports an error rather than producing an invalid schedule.
+
+## Program Output
+
+The following screenshots show the weekly schedules and employee summaries generated by both implementations.
+
+### Go Application
+
+**Screenshot 1 — Go Output**
+
+![Go Schedule Screenshot 1](go%20screen%20shot.png)
+
+**Screenshot 2 — Go Output**
+
+![Go Schedule Screenshot 2](go%20screenshot%202.png)
+
+**Screenshot 3 — Go Output**
+
+![Go Schedule Screenshot 3](go%20screen%20shot%203.png)
+
+### Python Application
+
+**Screenshot 1 — Python Output**
+
+![Python Schedule Screenshot 1](python%20screenshot%201.png)
+
+**Screenshot 2 — Python Output**
+
+![Python Schedule Screenshot 2](python%20screenshot%202.png)
+
+## Schedule Validation
+
+Both applications check that:
+
+- All seven days are included.
+- Each day contains morning, afternoon, and evening shifts.
+- Every shift has at least two employees.
+- No employee is assigned multiple shifts on the same day.
+- No employee works more than five days per week.
+
+The applications also display employee work totals and the number of assignments that match employee preferences.
 
 ## Conclusion
 
-The Go implementation demonstrates how control structures and data structures can be used to solve a scheduling problem. It separates input, scheduling, validation, and output into individual files to keep the application organized and easier to maintain.
+This project demonstrates how Go and Python can be used to implement the same scheduling problem with different language features.
+
+Go uses structs, slices, maps, and explicit control flow, while Python provides dictionaries, lists, and more concise syntax.
+
+Both implementations demonstrate conditional statements, iteration, input validation, and conflict resolution while producing a readable weekly employee schedule.
