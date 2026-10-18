@@ -1,8 +1,6 @@
 package main
 
 
-package main
-
 // Employee represents a team member and their preferred
 // shift for each day of the week.
 type Employee struct {

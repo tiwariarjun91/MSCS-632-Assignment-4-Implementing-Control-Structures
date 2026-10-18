@@ -1,4 +1,3 @@
-
 package main
 
 // Edge represents a connection between two nodes
